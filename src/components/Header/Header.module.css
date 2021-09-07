@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  height: 15vh;
+  background-color: var(--background-color);
+}
+
+.logo {
+  padding: 0.6rem 2rem;
+}
