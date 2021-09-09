@@ -1,7 +1,8 @@
 import { FC, useEffect } from "react";
-import { useActions } from "./hooks/useActions";
-import Header from "./components/Header/Header";
+
 import AppRouter from "./components/AppRouter/AppRouter";
+import Header from "./components/Header/Header";
+import { useActions } from "./hooks/useActions";
 
 const App: FC = () => {
   const { setIsAuth } = useActions();
@@ -10,11 +11,10 @@ const App: FC = () => {
     if (localStorage.getItem("auth")) {
       setIsAuth(true);
     }
-  }, []);
+  });
 
   return (
     <div>
-      dsds
       <Header />
       <AppRouter />
     </div>

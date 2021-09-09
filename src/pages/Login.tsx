@@ -1,6 +1,6 @@
 import { FC } from "react";
-import LoginButton from "../components/LoginButton/LoginButton";
 
+import LoginButton from "../components/LoginButton/LoginButton";
 import styles from "./Login.module.css";
 
 const Login: FC = () => {

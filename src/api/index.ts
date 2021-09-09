@@ -1,6 +1,6 @@
-import { IDelivery } from "./apiLayer";
 import ApiAuth from "./ApiAuth";
 import ApiJogs from "./ApiJogs";
+import { IDelivery } from "./apiLayer";
 
 class Delivery implements IDelivery {
   ApiJogs = ApiJogs;

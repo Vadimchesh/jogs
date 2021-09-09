@@ -1,6 +1,7 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+
 import { useTypedSelector } from "../hooks/useTypedSelector";
-import { ApiUserLogin, API_URL, IApiAuth, ROOT_URL } from "./apiLayer";
+import { API_URL, ApiUserLogin, IApiAuth, ROOT_URL } from "./apiLayer";
 
 const axiosApiInstance = axios.create();
 
@@ -10,6 +11,7 @@ axiosApiInstance.interceptors.request.use((config: AxiosRequestConfig) => {
   const token = accessToken;
 
   if (token) {
+    // eslint-disable-next-line
     newConfig.headers["Authorization"] = "Bearer " + token;
   }
 

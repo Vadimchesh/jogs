@@ -4,7 +4,6 @@ import { ReactSVG } from "react-svg";
 
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { RouteNames } from "../../router";
-
 import styles from "./Header.module.css";
 
 const Header: FC = () => {

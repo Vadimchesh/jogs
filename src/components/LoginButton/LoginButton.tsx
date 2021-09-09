@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { ReactSVG } from "react-svg";
-import { useActions } from "../../hooks/useActions";
 
+import { useActions } from "../../hooks/useActions";
 import styles from "./LoginButton.module.css";
 
 const LoginButton: FC = () => {
@@ -18,9 +18,9 @@ const LoginButton: FC = () => {
         role="img"
         className={styles.svg}
       />
-      <div className={styles.button} onClick={handleClick}>
+      <button className={styles.button} onClick={handleClick}>
         Let me in
-      </div>
+      </button>
     </div>
   );
 };

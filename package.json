@@ -5,22 +5,21 @@
     "name": "Jogging"
   },
   "scripts": {
-    "dev": "vite",
-    "start": "vite serve",
-    "build": "tsc && vite build",
-    "serve": "vite preview",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "jest",
     "test:watch": "jest --watch",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\" && git update-index --again",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --quiet",
+    "lint-fix": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix",
     "prepare": "husky install"
   },
   "dependencies": {
     "antd": "^4.16.13",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
-    "react-svg": "^14.0.11",
-    "vite": "^2.4.4"
+    "react-scripts": "^4.0.3",
+    "react-svg": "^14.0.11"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -37,6 +36,7 @@
     "@typescript-eslint/parser": "^4.29.2",
     "@vitejs/plugin-react-refresh": "^1.3.1",
     "axios": "^0.21.3",
+    "babel-jest": "^26.6.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-typescript": "^2.4.0",
@@ -52,7 +52,7 @@
     "eslint-plugin-testing-library": "^4.12.0",
     "husky": "^7.0.2",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^27.0.6",
+    "jest": "^26.6.0",
     "prettier": "^2.3.2",
     "react-redux": "^7.2.5",
     "react-router-dom": "^5.3.0",
@@ -62,5 +62,17 @@
     "ts-jest": "^27.0.5",
     "typescript": "^4.3.2"
   },
-  "proxy": "https://jogtracker.herokuapp.com"
+  "proxy": "https://jogtracker.herokuapp.com",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
