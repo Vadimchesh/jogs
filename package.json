@@ -6,7 +6,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "start": "vite build",
+    "start": "vite serve",
     "build": "tsc && vite build",
     "serve": "vite preview",
     "test": "jest",
