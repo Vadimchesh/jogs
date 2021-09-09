@@ -5,9 +5,9 @@ import { useActions } from "../../hooks/useActions";
 import styles from "./LoginButton.module.css";
 
 const LoginButton: FC = () => {
-  const { setIsAuth } = useActions();
+  const { login } = useActions();
   const handleClick = () => {
-    setIsAuth(true);
+    login();
   };
 
   return (
