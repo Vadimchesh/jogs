@@ -28,6 +28,7 @@ export const JogActionCreators = {
     async (dispatch: AppDispatch): Promise<void> => {
       try {
         const response = await api.ApiJogs.getJogs();
+        console.log(response);
         const jogs = response.data.response;
         dispatch(JogActionCreators.setJogs(jogs));
         localStorage.setItem("jogs", JSON.stringify(response));

@@ -9,13 +9,14 @@ import { IJog } from "../models/IJog";
 import styles from "./Jog.module.css";
 
 const Jog: FC = () => {
-  const { getJogs } = useActions();
+  const { isAuth } = useTypedSelector(state => state.auth);
   const jogs = useTypedSelector(state => state.event.jogs);
+  const { getJogs } = useActions();
 
   useEffect(() => {
-    if (!jogs) return;
+    if (!jogs && !isAuth) return;
     getJogs();
-  }, [jogs]);
+  }, []);
 
   return (
     <main>
