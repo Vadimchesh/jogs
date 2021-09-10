@@ -1,4 +1,5 @@
 import { AxiosResponse } from "axios";
+import { IJog } from "../models/IJog";
 
 export interface IDelivery {
   ApiJogs: IApiJogs;
@@ -10,7 +11,7 @@ export interface IApiAuth {
 }
 
 export interface IApiJogs {
-  getJogs: () => Promise<AxiosResponse<ApiUserLogin>>;
+  getJogs: () => Promise<AxiosResponse<ApiJog>>;
 }
 
 export type ApiUserLogin = {
@@ -22,6 +23,16 @@ export type ApiUserLogin = {
     created_at: number;
   };
   timestamp: number;
+};
+
+export type ApiJog = {
+  response: Jogs;
+  timestamp: number;
+};
+
+export type Jogs = {
+  jogs: IJog[];
+  users: any;
 };
 
 export const ROOT_URL = "https://jogtracker.herokuapp.com";

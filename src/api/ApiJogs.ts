@@ -1,12 +1,12 @@
 import { AxiosResponse } from "axios";
 
-import { API_URL, ApiUserLogin, IApiJogs } from "./apiLayer";
+import { API_URL, IApiJogs, ApiJog } from "./apiLayer";
 import FetchClient from "./FetchClient";
 
 class ApiJogs implements IApiJogs {
-  private _getJogs = async (): Promise<AxiosResponse<ApiUserLogin>> => {
+  getJogs = async (): Promise<AxiosResponse<ApiJog>> => {
     try {
-      const response: AxiosResponse<ApiUserLogin> = await FetchClient.get(
+      const response: AxiosResponse<ApiJog> = await FetchClient.get(
         `${API_URL.getJogs}`
       );
 
@@ -15,11 +15,5 @@ class ApiJogs implements IApiJogs {
       throw new Error();
     }
   };
-  public get getJogs() {
-    return this._getJogs;
-  }
-  public set getJogs(value) {
-    this._getJogs = value;
-  }
 }
 export default new ApiJogs();

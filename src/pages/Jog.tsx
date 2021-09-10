@@ -1,17 +1,21 @@
 import { FC, useEffect } from "react";
+
+import JogItem from "../components/JogItem/JogItem";
+
 import { useActions } from "../hooks/useActions";
+import { useTypedSelector } from "../hooks/useTypedSelector";
+import { IJog } from "../models/IJog";
 
 import styles from "./Jog.module.css";
 
 const Jog: FC = () => {
   const { getJogs } = useActions();
-  const handleClick = () => {
-    getJogs();
-  };
+  const jogs = useTypedSelector(state => state.event.jogs);
 
   useEffect(() => {
     getJogs();
   });
+
   return (
     <main>
       <div className={styles.header}>
@@ -22,8 +26,9 @@ const Jog: FC = () => {
           Date to <input></input>
         </div>
       </div>
-      <div className={styles.jogs}>Jogs</div>
-      <button onClick={handleClick}>Get jogs</button>
+      {jogs.jogs.map((jog: IJog) => (
+        <JogItem jog={jog} key={jog.id} />
+      ))}
     </main>
   );
 };

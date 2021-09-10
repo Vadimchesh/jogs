@@ -2,6 +2,6 @@ export interface IJog {
   id: string;
   date: Date;
   speed: string;
-  distantion: string;
+  distance: string;
   time: string;
 }

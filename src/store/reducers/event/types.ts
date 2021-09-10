@@ -1,7 +1,7 @@
-import { IJog } from "../../../models/IJog";
+import { Jogs } from "../../../api/apiLayer";
 
 export interface JogState {
-  jogs: IJog[];
+  jogs: Jogs;
 }
 
 export enum JogActionEnum {
@@ -10,7 +10,7 @@ export enum JogActionEnum {
 
 export interface SetJogsAction {
   type: JogActionEnum.SET_JOGS;
-  payload: IJog[];
+  payload: Jogs;
 }
 
 export type JogAction = SetJogsAction;

@@ -1,7 +1,7 @@
 import { JogAction, JogActionEnum, JogState } from "./types";
 
 const initialState: JogState = {
-  jogs: [],
+  jogs: { jogs: [], users: [] },
 };
 
 export default function JogReducer(
