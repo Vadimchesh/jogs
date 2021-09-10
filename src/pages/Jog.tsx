@@ -13,8 +13,9 @@ const Jog: FC = () => {
   const jogs = useTypedSelector(state => state.event.jogs);
 
   useEffect(() => {
+    if (!jogs) return;
     getJogs();
-  });
+  }, [jogs]);
 
   return (
     <main>
