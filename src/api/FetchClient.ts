@@ -1,8 +1,9 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
+import { ROOT_URL } from "./apiLayer";
 
 const fetchClient = (): AxiosInstance => {
   const defaultOptions: any = {
-    baseURL: process.env.REACT_APP_API_PATH,
+    baseURL: ROOT_URL,
     method: "get",
     headers: {
       "Content-Type": "application/json",
