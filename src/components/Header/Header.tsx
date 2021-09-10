@@ -1,9 +1,12 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import { ReactSVG } from "react-svg";
 
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { RouteNames } from "../../router";
+
+import { ReactComponent as Logo } from "../../assets/img/logo.svg";
+import { ReactComponent as Filter } from "../../assets/img/filter.svg";
+
 import styles from "./Header.module.css";
 
 const Header: FC = () => {
@@ -11,20 +14,28 @@ const Header: FC = () => {
 
   return (
     <nav className={styles.header}>
+      <Link to="/" className={styles.logo}>
+        <Logo />
+      </Link>
       {!isAuth ? (
-        <div className={styles.logo}>
-          <ReactSVG
-            src="./src/assets/img/logo.svg"
-            aria-label="Logo"
-            role="img"
-          />
-        </div>
+        <></>
       ) : (
-        <div className={styles.menu}>
-          <Link to={RouteNames.JOGS}> Jogs </Link>
-          <Link to={RouteNames.INFO}> INFO </Link>
-          <Link to={RouteNames.CONTACT}>Contatcy Us</Link>
-        </div>
+        <>
+          <div className={styles.menu}>
+            <Link to={RouteNames.JOGS} className={styles.link}>
+              jogs
+            </Link>
+            <Link to={RouteNames.INFO} className={styles.link}>
+              info
+            </Link>
+            <Link to={RouteNames.CONTACT} className={styles.link}>
+              contatcy us
+            </Link>
+            <Link to={RouteNames.CONTACT} className={styles.link}>
+              <Filter className={styles.filter} />
+            </Link>
+          </div>
+        </>
       )}
     </nav>
   );

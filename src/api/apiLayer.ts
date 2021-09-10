@@ -10,7 +10,7 @@ export interface IApiAuth {
 }
 
 export interface IApiJogs {
-  login: () => Promise<AxiosResponse<ApiUserLogin>>;
+  getJogs: () => Promise<AxiosResponse<ApiUserLogin>>;
 }
 
 export type ApiUserLogin = {
@@ -28,4 +28,5 @@ export const ROOT_URL = "https://jogtracker.herokuapp.com";
 
 export const API_URL = {
   login: "/api/v1/auth/uuidLogin",
+  getJogs: "/api/v1/data/sync",
 };

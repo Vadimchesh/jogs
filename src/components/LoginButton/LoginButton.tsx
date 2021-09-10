@@ -1,7 +1,9 @@
 import { FC } from "react";
-import { ReactSVG } from "react-svg";
 
 import { useActions } from "../../hooks/useActions";
+
+import { ReactComponent as Logo } from "../../assets/img/bear.svg";
+
 import styles from "./LoginButton.module.css";
 
 const LoginButton: FC = () => {
@@ -12,12 +14,7 @@ const LoginButton: FC = () => {
 
   return (
     <div className={styles.box}>
-      <ReactSVG
-        src="./src/assets/img/bear.svg"
-        aria-label="Logo"
-        role="img"
-        className={styles.svg}
-      />
+      <Logo />
       <button className={styles.button} onClick={handleClick}>
         Let me in
       </button>

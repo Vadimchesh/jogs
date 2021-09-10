@@ -8,7 +8,7 @@ const App: FC = () => {
   const { setIsAuth } = useActions();
 
   useEffect(() => {
-    if (localStorage.getItem("auth")) {
+    if (localStorage.getItem("access_token")) {
       setIsAuth(true);
     }
   });

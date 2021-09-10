@@ -1,31 +1,13 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+import { AxiosResponse } from "axios";
 
-import { useTypedSelector } from "../hooks/useTypedSelector";
-import { API_URL, ApiUserLogin, IApiAuth } from "./apiLayer";
+import { API_URL, ApiUserLogin, IApiJogs } from "./apiLayer";
+import FetchClient from "./FetchClient";
 
-const axiosApiInstance = axios.create();
-
-axiosApiInstance.interceptors.request.use((config: AxiosRequestConfig) => {
-  const newConfig = { ...config };
-  const { accessToken } = useTypedSelector(state => state.auth);
-  const token = accessToken;
-
-  if (token) {
-    // eslint-disable-next-line
-    newConfig.headers["Authorization"] = "Bearer " + token;
-  }
-
-  return newConfig;
-});
-
-class ApiJogs implements IApiAuth {
-  login = async (): Promise<AxiosResponse<ApiUserLogin>> => {
+class ApiJogs implements IApiJogs {
+  private _getJogs = async (): Promise<AxiosResponse<ApiUserLogin>> => {
     try {
-      const response: AxiosResponse<ApiUserLogin> = await axios.post(
-        `${API_URL.login}`,
-        {
-          line: "",
-        }
+      const response: AxiosResponse<ApiUserLogin> = await FetchClient.get(
+        `${API_URL.getJogs}`
       );
 
       return response;
@@ -33,5 +15,11 @@ class ApiJogs implements IApiAuth {
       throw new Error();
     }
   };
+  public get getJogs() {
+    return this._getJogs;
+  }
+  public set getJogs(value) {
+    this._getJogs = value;
+  }
 }
 export default new ApiJogs();

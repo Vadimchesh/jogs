@@ -1,9 +1,36 @@
 .header {
   display: flex;
-  height: 15vh;
+  align-items: center;
+  justify-content: space-between;
+  height: 5rem;
   background-color: var(--background-color);
 }
 
 .logo {
   padding: 0.6rem 2rem;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  color: var(--white);
+}
+
+.link {
+  margin-right: 1rem;
+  font-family: var(--font-family-bold);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline solid;
+}
+
+.filter {
+  margin: 0 5rem;
+}
+
+.filter:hover {
+  color: aqua;
 }
